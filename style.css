@@ -1,0 +1,179 @@
+/* Estilo general para el body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e6f7ff;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+/* Estilo para la clase .encabezado */
+.encabezado {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    background-color: #4a90e2;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+/* Estilo para la clase .titulo */
+.titulo {
+    font-size: 20px;
+    text-align: left;
+    color: #4a90e2;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #4a90e2;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+/* Estilo para la clase .referencia */
+.referencia {
+    font-style: italic;
+    color: #007acc;
+    background-color: #b3d9ff;
+    padding: 15px;
+    margin: 20px auto;
+    border-left: 5px solid #4a90e2;
+    display: inline-block;
+}
+
+/* Estilo para las cajas */
+.caja {
+    background-color: #ffffff;
+    border: 2px solid #4a90e2;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para la caja destacada */
+.caja.destacada {
+    background-color: #d1e7f7;
+    border: 4px solid #007acc;
+}
+
+/* Estilo para la caja relativa */
+.relativo {
+    position: relative;
+    background-color: #b3d9ff;
+    border: 3px solid #4a90e2;
+    padding: 20px 150px 20px 0px;
+    width: 600px;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+/* Estilo para la caja absoluta */
+.absoluto {
+    position: absolute;
+    right: 12px;
+    background-color: #007acc;
+    border: 3px solid #e6f7ff;
+    color: #ffffff;
+    padding: 7px;
+    border-radius: 5px;
+    width: 160px;
+    transform: translateY(60%);
+}
+
+/* Estilo para el contenedor de la cuadrícula */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px; /* Espacio entre los elementos */
+    padding: 10px;
+}
+
+/* Estilo para los elementos de la cuadrícula */
+.grid-item {
+    background-color: #4a90e2;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el div con clase animacion */
+.animacion {
+    width: 100px;
+    height: 100px;
+    background-color: #4a90e2;
+    transition: background-color 0.5s ease; /* Transición de color al hacer hover */
+}
+
+/* Cambia el color de fondo al hacer hover */
+.animacion:hover {
+    background-color: #007acc;
+}
+
+/* Estilo para el div con clase mover */
+.mover {
+    width: 100px;
+    height: 100px;
+    background-color: #4a90e2;
+    position: relative; /* Necesario para que la animación funcione correctamente */
+    animation: mover 4s linear infinite; /* Aplicar la animación */
+}
+
+/* Definición de la animación */
+@keyframes mover {
+    0% {
+        transform: translateX(0); /* Comienza en la posición inicial */
+    }
+    50% {
+        transform: translateX(calc(100vw - 100px)); /* Mueve el div a la derecha */
+    }
+    100% {
+        transform: translateX(0); /* Regresa a la posición inicial */
+    }
+}
+
+/* Media Queries para pantallas con un ancho máximo de 768px */
+@media (max-width: 768px) {
+    body {
+        background-color: #000000; /* Cambia el color de fondo a un tono más claro */
+    }
+
+    .encabezado {
+        font-size: 20px; /* Reduce el tamaño de la fuente del encabezado */
+        padding: 15px; /* Reduce el padding del encabezado */
+    }
+
+    .titulo {
+        font-size: 18px; /* Reduce el tamaño de la fuente del título */
+    }
+
+    .referencia {
+        font-size: 14px; /* Reduce el tamaño de la fuente del blockquote */
+        padding: 10px; /* Reduce el padding del blockquote */
+        border-left-width: 3px; /* Reduce el grosor del borde del blockquote */
+    }
+
+    .caja {
+        width: 100%; /* Ajusta el ancho de las cajas para que se adapten al ancho del contenedor */
+        padding: 15px; /* Reduce el padding de las cajas */
+        margin: 10px 0; /* Reduce el margen de las cajas */
+    }
+
+    .relativo {
+        width: 90%; /* Ajusta el ancho de la caja relativa */
+        padding: 15px 50px 15px 10px; /* Ajusta el padding de la caja relativa */
+        box-shadow: none; /* Opcional: elimina la sombra para dispositivos móviles */
+    }
+
+    .absoluto {
+        width: 120px; /* Ajusta el ancho de la caja absoluta */
+        height: 30px; /* Ajusta la altura de la caja absoluta */
+        line-height: 30px; /* Ajusta la altura de línea para centrar el texto verticalmente */
+        font-size: 12px; /* Reduce el tamaño de la fuente de la caja absoluta */
+        transform: translateY(50%); /* Ajusta la posición vertical */
+    }
+}
